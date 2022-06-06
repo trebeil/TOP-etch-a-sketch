@@ -16,6 +16,9 @@ body {
 .buttonsContainer2, .buttonsContainer3 {
     border: 1px solid black;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #colorMode, #options {
@@ -31,8 +34,30 @@ button {
     width: 125px;
 }
 
+#solid {
+    margin-bottom: 0.5rem;
+}
+
+.colorInput {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
 .active {
     border: 2px solid black;
+}
+
+.line {
+    border-top: 1px solid grey;
+    width: 135px;
 }
 
 .container {
