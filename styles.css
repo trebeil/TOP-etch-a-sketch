@@ -1,53 +1,50 @@
 body {
     display: flex;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .buttonsContainer1 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 
 .buttonsContainer2 {
-    display: block;
-}
-
-.buttonsContainer2, .buttonsContainer3 {
     border: 1px solid black;
-    margin: 1rem;
+    margin: 0 0.2rem 0.2rem 0.2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+}
+
+.rangeMinMax {
+    display: flex;
+    justify-content: space-between;
 }
 
 #colorMode, #options {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    padding: 0.5rem 0;
 }
 
-button {
-    margin: 1rem;
-    display: block;
-    width: 125px;
+#resolutionDisclaimer {
+    text-align: center;
+    font-size: small;
 }
 
-#solid {
-    margin-bottom: 0.5rem;
+.rangeMinMax, .chosenResolution {
+    font-size: small;
 }
 
 .colorInput {
     display: flex;
     justify-content: center;
-    margin-bottom: 0.5rem;
 }
 
 input {
     border: none;
-    margin: 0;
-    padding: 0;
     background-color: transparent;
 }
 
@@ -57,7 +54,7 @@ input {
 
 .line {
     border-top: 1px solid grey;
-    width: 135px;
+    margin: 0.8rem 0 0.8rem 0;
 }
 
 .container {

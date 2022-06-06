@@ -65,6 +65,15 @@ function startCanvas() {
     });
 }
 
+function changeColorMode (element) {
+    colorMode = element.id;
+    let activeButtons = document.querySelectorAll('.colorModeButton.active');
+    activeButtons.forEach(element => {
+        element.classList.remove('active');
+    })
+    element.classList.add('active');
+}
+
 let squaresPerSide = 16;
 let width = window.innerWidth*0.7;
 let height = window.innerHeight*0.7;
@@ -74,7 +83,7 @@ let color = 'black';
 createCanvas(squaresPerSide, width, height);
 startCanvas();
 
-let input = document.querySelector('input');
+let input = document.querySelector('input#color');
 input.addEventListener('change', () => {
     color = input.value;
     colorMode = 'solid';
@@ -82,9 +91,11 @@ input.addEventListener('change', () => {
     changeColorMode(document.querySelector('#solid'));
 });
 
-let resolutionButton = document.querySelector('#resolution');
-resolutionButton.addEventListener('click', () => {
-    squaresPerSide = prompt('Select the number of squares per side');
+let resolutionSlider = document.querySelector('#resolution');
+resolutionSlider.value = 16;
+resolutionSlider.addEventListener('change', () => {
+    squaresPerSide = resolutionSlider.value;
+    document.querySelector('.chosenResolution').textContent = `Current: ${squaresPerSide}`;
     cleanCanvas();
     createCanvas(squaresPerSide, width, height);
     startCanvas();
@@ -103,15 +114,6 @@ colorModeButton.forEach(element => {
         changeColorMode(element);
     });
 });
-
-function changeColorMode (element) {
-    colorMode = element.id;
-    let activeButtons = document.querySelectorAll('.colorModeButton.active');
-    activeButtons.forEach(element => {
-        element.classList.remove('active');
-    })
-    element.classList.add('active');
-}
 
 window.addEventListener('resize', () => {
     width = window.innerWidth*0.7;
