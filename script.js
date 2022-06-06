@@ -20,11 +20,11 @@ function createCanvas (squaresPerSide, width, height) {
 }
 
 function cleanCanvas() {
-    let body = document.querySelector('body');
-    body.removeChild(document.querySelector('.container'));
+    let div = document.querySelector('.content');
+    div.removeChild(document.querySelector('.container'));
     let container = document.createElement('div');
     container.classList.add('container');
-    body.appendChild(container);
+    div.appendChild(container);
 }
 
 function randomColor() {
