@@ -65,6 +65,10 @@ function startCanvas() {
 });
 }
 
+function customizeButtons() {
+
+}
+
 let squaresPerSide = 16;
 let width = window.innerWidth*0.7;
 let height = window.innerHeight*0.7;
@@ -91,6 +95,11 @@ colorModeButton = document.querySelectorAll('.colorModeButton');
 colorModeButton.forEach(element => {
     element.addEventListener('click', () => {
         colorMode = element.id;
+        let activeButtons = document.querySelectorAll('.colorModeButton.active');
+        activeButtons.forEach(element => {
+            element.classList.remove('active');
+        })
+        element.classList.add('active');
     })
 })
 

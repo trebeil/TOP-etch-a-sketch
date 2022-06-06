@@ -31,6 +31,10 @@ button {
     width: 125px;
 }
 
+.active {
+    border: 2px solid black;
+}
+
 .container {
     display: inline-flex;
     flex-wrap: wrap;
